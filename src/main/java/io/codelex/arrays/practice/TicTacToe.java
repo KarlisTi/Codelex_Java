@@ -19,8 +19,12 @@ public class TicTacToe {
             int x = keyboard.nextInt();
             int y = keyboard.nextInt();
             board[x][y] = 'O';
-            gameWinner(board);
             displayBoard();
+           if(gameWinner(board) =='O'){
+               System.out.println("Uzvar 1. spēlētājs");
+               break;
+           }
+
 
             System.out.println("2. spēlētāja gājiens:");
             System.out.println("Kur liksi X?");
@@ -30,30 +34,41 @@ public class TicTacToe {
 
             board[x1][y1] = 'X';
             displayBoard();
-            boolean playerOne;
-            boolean playerTwo;
-            boolean gameIsTie
-        }
-    }
-
-    public static boolean gameWinner(char[][]board) {
-        ;
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                if (board[i][j] == 'O'}{
-
+            if(gameWinner(board) =='X'){
+                System.out.println("Uzvar 2. spēlētājs");
+                break;
             }
         }
-        return false;
     }
 
-
-        public static void initBoard () {
-            // fills up the board with blanks
-            for (int r = 0; r < 3; r++)
-                for (int c = 0; c < 3; c++)
-                    board[r][c] = ' ';
+    public static char gameWinner(char[][] board) {
+        for(int i = 0; i < 3; i++) {
+            if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != ' ') {
+                return board[i][0];
+            }
         }
+        for(int j = 0; j < 3; j++) {
+            if(board[0][j] == board[1][j] && board[1][j] == board[2][j] && board[0][j] != ' ') {
+                return board[0][j];
+            }
+        }
+
+        if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != ' ') {
+            return board[0][0];
+        }
+        if(board[2][0] == board[1][1] && board[1][1] ==  board[0][2] && board[2][0] != ' ') {
+            return board[2][0];
+        }
+        return ' ';
+
+    }
+
+    public static void initBoard() {
+        // fills up the board with blanks
+        for (int r = 0; r < 3; r++)
+            for (int c = 0; c < 3; c++)
+                board[r][c] = ' ';
+    }
 
 
     public static void displayBoard() {
