@@ -14,18 +14,18 @@ public class Hangman {
         hiddenWord(listOfWords);
         System.out.println();
         System.out.println("Misses:");
+        char[] missedWords = {};
         System.out.println();
         System.out.println("Guess: ");
+
         char inputChar = scan.next().charAt(0);
         int tries = 10;
-        hiddenWord(listOfWords);
     }
-        public static char [] hiddenWord(String [] words){
-       String chooseWord = words[(int) (Math.random() * words.length)];
-       char [] wordToLetters = chooseWord.toCharArray();
+    public static void hiddenWord(String[] words) {
+        String chooseWord = words[(int) (Math.random() * words.length)];
+        char[] wordToLetters = chooseWord.toCharArray();
         for (char i = 0; i < wordToLetters.length; i++) {
-            wordToLetters[i] ='_'+' ';
+            System.out.print( wordToLetters[i] = '_');
         }
-        return ;
     }
 }
