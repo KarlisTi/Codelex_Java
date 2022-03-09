@@ -18,19 +18,31 @@ public class Hangman {
             printOutWord(chooseWord, guessedLetters);
             System.out.println();
             System.out.println("Misses:");
+            System.out.println(missedLetters);
+            if(missedLetters.length()>=10){
+                System.out.println("You loose the game");
+            }
 
             System.out.println();
             System.out.println("Guess: ");
 
             char inputChar = scan.nextLine().charAt(0);
-            int tries = 10;
 
-
+            //check if chosen word contains input letter, if not then input char pushed to missed letters
             if( chooseWord.contains(String.valueOf(inputChar))) {
                 guessedLetters += inputChar;
             } else {
                 missedLetters +=inputChar;
             }
+
+            //check if you guessed all characters
+            if(guessedLetters.equals(chooseWord)){
+                System.out.println("You won the game");
+                System.out.println("Guessed word is: ");
+                printOutWord(chooseWord, guessedLetters);
+                break;
+            }
+
 
         }
 
