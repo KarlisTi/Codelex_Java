@@ -5,6 +5,18 @@ import java.util.Scanner;
 
 public class SavingAccount {
 
+    //mainīgie
+
+    private int annualInterestRate;
+    private  int balance;
+    private int startingBalance;
+
+    // konsturkors
+
+    public SavingAccount( int startingBalance) {
+        this.startingBalance = startingBalance;
+    }
+
 // getteri un setteri
 
     public int getAnnualInterestRate() {
@@ -23,13 +35,6 @@ public class SavingAccount {
         this.balance = balance;
     }
 
-    public int getSavings() {
-        return savings;
-    }
-
-    public void setSavings(int savings) {
-        this.savings = savings;
-    }
 
     public int getStartingBalance() {
         return startingBalance;
@@ -39,20 +44,7 @@ public class SavingAccount {
         this.startingBalance = startingBalance;
     }
 
-    //mainīgie
 
-    private static int annualInterestRate;
-    private static int balance;
-    private int savings;
-    private int startingBalance;
-
-
-    // konsturkors
-
-    public SavingAccount(int savings, int startingBalance) {
-        this.savings = savings;
-        this.startingBalance = startingBalance;
-    }
 
     //metodes
 
@@ -64,7 +56,7 @@ public class SavingAccount {
 
     }
 
-    public static int monthlyInterest(int months) {
+    public  int monthlyInterest(int months) {
         return  (annualInterestRate /12)*balance;
     }
 
@@ -82,7 +74,7 @@ public class SavingAccount {
         Scanner scan = new Scanner(System.in);
         SavingAccount balanced = new SavingAccount(10000);
         System.out.print("How much money is in the account?: ");
-        System.out.print(balanced.balance);
+        System.out.print(balanced.getBalance());
         System.out.println();
         System.out.println("Enter the annual interest rate: ");
         int annualInterest = scan.nextInt();
