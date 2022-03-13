@@ -1,7 +1,7 @@
-package io.codelex.classesandobjects.practice;
+package io.codelex.classesandobjects.practice.Exercise3;
 
 public class Odometer {
-   private int mileage;
+    private int mileage;
 
     public int getMileage() {
         return mileage;
@@ -15,10 +15,10 @@ public class Odometer {
         this.mileage = mileage;
     }
 
-    public void incraseMilage(){
-        if(this.mileage < 999999){
-            this.mileage +=1;
-        } else{
+    public void incraseMilage() {
+        if (this.mileage < 999999) {
+            this.mileage += 1;
+        } else {
             this.mileage = 0;
             System.out.println("Odometer reach maximum and resets current mileage");
         }

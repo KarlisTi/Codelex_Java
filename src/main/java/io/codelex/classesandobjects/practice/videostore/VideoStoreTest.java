@@ -8,6 +8,8 @@ public class VideoStoreTest {
     public static void main(String[] args) {
         final Scanner keyboard = new Scanner(System.in);
 
+
+
         while (true) {
             System.out.println("Choose the operation you want to perform ");
             System.out.println("Choose 0 for EXIT");
@@ -37,12 +39,15 @@ public class VideoStoreTest {
     }
 
     private static void fillVideoStore(Scanner scanner) {
+        VideoStore newStore = new VideoStore();
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
             System.out.println("Enter movie name");
             String movieName = scanner.next();
+            newStore.addANewVideo(movieName);
             System.out.println("Enter rating");
             int rating = scanner.nextInt();
-            //todo - add video
+            new
+
         }
     }
 
