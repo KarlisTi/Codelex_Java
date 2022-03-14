@@ -3,37 +3,24 @@ package io.codelex.classesandobjects.practice.videostore;
 public class Video {
 
     private String title;
-    private Boolean checkout;
-    private int averageUserRating;
+    private boolean checkOut = true;
+    private int averageRating = 0;
 
-    public Video(String name) {
-        title = name;
+    public Video(String title, boolean checkOut, int averageRating) {
+        this.title = title;
+        this.checkOut = checkOut;
+        this.averageRating = averageRating;
     }
 
-    public String getName() {
-        return title;
-    }
-
-    public int getRating() {
-        return averageUserRating;
-    }
-
-    public boolean getCheckout() {
-        return checkout;
-    }
-
-    public void receiveRating(int rating) {
-        averageUserRating = rating;
-    }
-
-    public void doCheckout() {
-        System.out.println("Video " + '"' + getName() + '"' + " checked out successfully.");
-    }
-
-    public void doReturn() {
-        if (checkout) {
-            System.out.println("Video " + '"' + getName() + '"' + " returned successfully.");
+    public void checkedOut() {
+        if (checkOut) {
+            System.out.println(this.title + "Video has checked out");
         }
     }
+
+    public void addRating(int rating) {
+        averageRating += rating;
+    }
+
 
 }
