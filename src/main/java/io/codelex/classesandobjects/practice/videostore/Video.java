@@ -4,7 +4,12 @@ public class Video {
 
     private String title;
     private boolean checkOut = true;
-    private int averageRating = 0;
+    private int rating;
+
+    public Video() {
+
+    }
+
 
     public Video(String title, boolean checkOut, int averageRating) {
         this.title = title;

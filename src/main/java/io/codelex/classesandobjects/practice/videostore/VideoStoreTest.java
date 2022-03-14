@@ -39,14 +39,14 @@ public class VideoStoreTest {
     }
 
     private static void fillVideoStore(Scanner scanner) {
-        ArrayList<String> newStore = new ArrayList<>();
+        VideoStore <ArrayList> movies = new VideoStore();
+        Video newmovie = new Video("",true,)
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
             System.out.println("Enter movie name");
             String movieName = scanner.next();
-            newStore.add(movieName);
+            movies.;
             System.out.println("Enter rating");
-            int rating = scanner.nextInt();
-            newStore.addRating()
+
         }
     }
 
