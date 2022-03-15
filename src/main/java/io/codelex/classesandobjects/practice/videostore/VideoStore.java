@@ -1,27 +1,29 @@
 package io.codelex.classesandobjects.practice.videostore;
 
-
-import java.io.ObjectStreamException;
 import java.util.ArrayList;
 
-public class VideoStore extends Video {
+public class VideoStore {
 
-    private ArrayList<Object> names;
+    ArrayList<String> inventory = new ArrayList<String>();
 
-    public VideoStore() {
-        this.names = new ArrayList<Object>();
-
+    public void addVideo(String name) {
+        inventory.add(name);
     }
 
-    public ArrayList<Object> getNames() {
-        return names;
+    public void doCheckout(String name) {
+        inventory.remove(name);
     }
 
-    public void setNames(ArrayList<Object> names) {
-        this.names = names;
-    }
+    public void receiveRaiting(String name, int raiting) {
+        if (inventory.contains(name)) {
 
+        }
+
+    }
 
 }
+
+
+
 
 

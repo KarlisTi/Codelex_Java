@@ -1,6 +1,6 @@
 package io.codelex.classesandobjects.practice.videostore;
 
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class VideoStoreTest {
@@ -39,22 +39,29 @@ public class VideoStoreTest {
     }
 
     private static void fillVideoStore(Scanner scanner) {
-        VideoStore <ArrayList> movies = new VideoStore();
-        Video newmovie = new Video("",true,)
+        VideoStore movieArena = new VideoStore();
+        Video movieOne = new Video("", true, 0);
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
             System.out.println("Enter movie name");
             String movieName = scanner.next();
-            movies.;
+            movieOne.setTitle(movieName);
+            movieOne.addVideo(movieName);
             System.out.println("Enter rating");
+            int enterRating = scanner.nextInt();
+            movieOne.receiveRating(enterRating);
+
 
         }
     }
 
     private static void rentVideo(Scanner scanner) {
-        //todo - rent video
+        System.out.println("Enter name of movie that you want to rent");
+        String rentMovie = scanner.next();
+
     }
 
     private static void returnVideo(Scanner scanner) {
-        //todo - return video
+        System.out.println("Enter name of movie that you want to rent");
+        String returnMovie = scanner.next();
     }
 }
