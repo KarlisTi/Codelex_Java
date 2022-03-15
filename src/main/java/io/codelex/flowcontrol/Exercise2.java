@@ -13,7 +13,7 @@ public class Exercise2 {
         int num3 = in.nextInt();
         if (num1 > num2 && num1 > num3) {
             System.out.println("Largest number is 1st number");
-        } else if (num2 > num1 && num2 > num3) {
+        } else if (num2 > num3) {
             System.out.println("Largest number is 2nd number");
         } else {
             System.out.println("Largest number is 3rd number");
