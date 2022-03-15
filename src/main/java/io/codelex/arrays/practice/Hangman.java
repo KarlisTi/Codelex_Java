@@ -33,7 +33,6 @@ public class Hangman {
             } else {
                 missedLetters +=inputChar;
             }
-
            
             if(guessedLetters.equals(chooseWord)){
                 System.out.println("You won the game");
@@ -41,14 +40,9 @@ public class Hangman {
                 printOutWord(chooseWord, guessedLetters);
                 break;
             }
-
-
         }
-
-
     }
-
-
+    
     public static void printOutWord(String word, String guessedLetters) {
         for (int i = 0; i < word.length(); i++) {
             if (guessedLetters.contains(String.valueOf(word.charAt(i)))){
