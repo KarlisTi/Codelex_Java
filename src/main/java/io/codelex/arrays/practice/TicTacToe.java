@@ -16,9 +16,9 @@ public class TicTacToe {
             System.out.println("1. spēlētāja gājiens:");
             System.out.println("Kur liksi O?");
 
-            int x = keyboard.nextInt();
-            int y = keyboard.nextInt();
-            board[x][y] = 'O';
+            int inputX = keyboard.nextInt();
+            int inputY = keyboard.nextInt();
+            board[inputX][inputY] = 'O';
             displayBoard();
            if(gameWinner(board) =='O'){
                System.out.println("Uzvar 1. spēlētājs");
@@ -29,10 +29,10 @@ public class TicTacToe {
             System.out.println("2. spēlētāja gājiens:");
             System.out.println("Kur liksi X?");
 
-            int x1 = keyboard.nextInt();
-            int y1 = keyboard.nextInt();
+            int inputX1 = keyboard.nextInt();
+            int inputY1 = keyboard.nextInt();
 
-            board[x1][y1] = 'X';
+            board[inputX1][inputY1] = 'X';
             displayBoard();
             if(gameWinner(board) =='X'){
                 System.out.println("Uzvar 2. spēlētājs");
