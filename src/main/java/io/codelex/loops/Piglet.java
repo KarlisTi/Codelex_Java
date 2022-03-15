@@ -9,10 +9,10 @@ public class Piglet {
         System.out.println("Welcome to Piglet!");
         Random random = new Random();
         int randomNumber = random.nextInt(6) + 1;
-        int totals =0;
+        int totals = 0;
         System.out.println("You rolled a:" + randomNumber);
 
-        while(randomNumber != 1) {
+        while (randomNumber != 1) {
             System.out.println("Roll again?");
             String newInput = scan.next().toLowerCase();
             if (!newInput.equals("yes")) {
