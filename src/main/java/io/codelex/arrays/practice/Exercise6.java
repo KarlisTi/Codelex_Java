@@ -15,7 +15,7 @@ public class Exercise6 {
             anotherTenIntegers.add(randomNumber);
 
         }
-        tenIntegers.set(9,-7);
+        tenIntegers.set(tenIntegers.size() - 1, -7);
         System.out.println(tenIntegers);
         System.out.println(anotherTenIntegers);
     }
