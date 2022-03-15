@@ -43,7 +43,7 @@ public class Hangman {
         }
     }
     
-    public static void printOutWord(String word, String guessedLetters) {
+    private static void printOutWord(String word, String guessedLetters) {
         for (int i = 0; i < word.length(); i++) {
             if (guessedLetters.contains(String.valueOf(word.charAt(i)))){
                 System.out.print(word.charAt(i)+" ");
