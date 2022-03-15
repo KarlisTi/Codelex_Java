@@ -28,14 +28,13 @@ public class Hangman {
 
             char inputChar = scan.nextLine().charAt(0);
 
-            //check if chosen word contains input letter, if not then input char pushed to missed letters
             if( chooseWord.contains(String.valueOf(inputChar))) {
                 guessedLetters += inputChar;
             } else {
                 missedLetters +=inputChar;
             }
 
-            //check if you guessed all characters
+           
             if(guessedLetters.equals(chooseWord)){
                 System.out.println("You won the game");
                 System.out.println("Guessed word is: ");
