@@ -9,7 +9,7 @@ public class Hangman {
         String[] listOfWords = {"building", "river", "road"};
         String guessedLetters = "";
         String missedLetters ="";
-        String chooseWord = listOfWords[(int) (Math.random() * listOfWords.length)];
+        String chooseWord = listOfWords[new Random().nextInt(listOfWords.length)];
 
         while(true){
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=");
