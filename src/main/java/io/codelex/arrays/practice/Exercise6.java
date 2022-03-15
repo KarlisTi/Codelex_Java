@@ -7,7 +7,7 @@ public class Exercise6 {
     public static void main(String[] args) {
         ArrayList<Integer> tenIntegers = new ArrayList<Integer>();
         ArrayList<Integer> anotherTenIntegers = new ArrayList<Integer>();
-         Random random = new Random();
+        Random random = new Random();
 
         for (int i = 0; i < 10; i++) {
             int randomNumber = random.nextInt(100) + 1;
@@ -15,6 +15,7 @@ public class Exercise6 {
             anotherTenIntegers.add(randomNumber);
 
         }
+
         tenIntegers.set(tenIntegers.size() - 1, -7);
         System.out.println(tenIntegers);
         System.out.println(anotherTenIntegers);
