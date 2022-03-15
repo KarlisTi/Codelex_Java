@@ -10,8 +10,8 @@ public class TicTacToe {
         System.out.println();
         initBoard();
         displayBoard();
-
-        for (int i = 0; i < 9; i++) {
+        int chances =9;
+        for (int i = 0; i < chances; i++) {
 
             System.out.println("1. spēlētāja gājiens:");
             System.out.println("Kur liksi O?");
