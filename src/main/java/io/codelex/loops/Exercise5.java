@@ -11,7 +11,8 @@ public class Exercise5 {
         String secondWord = scan.next();
         int firsStringLength = firstWord.length();
         int secondStringLength = secondWord.length();
-        int calculateDots = 30 - firsStringLength - secondStringLength;
+        int totalLineLenght =30;
+        int calculateDots = totalLineLenght - firsStringLength - secondStringLength;
         System.out.println(calculateDots);
         String dots = "";
 

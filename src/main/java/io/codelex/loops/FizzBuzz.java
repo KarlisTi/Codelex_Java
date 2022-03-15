@@ -2,7 +2,9 @@ package io.codelex.Loops;
 
 public class FizzBuzz {
     public static void main(String[] args) {
-        int counter = 1;
+      Scanner scan = new Scanner(System.in);
+        System.out.println("Input a number");
+        int counter = scan.nextInt();
 
         for(int c = 1; c <= 5; ++c) {
             for(int j = 1; j <= 20; ++j) {

@@ -14,7 +14,7 @@ public class Piglet {
 
         while(randomNumber != 1) {
             System.out.println("Roll again?");
-            String newInput = scan.next();
+            String newInput = scan.next().toLowerCase();
             if (!newInput.equals("yes")) {
                 System.out.println("You got:" + totals + " points");
                 break;

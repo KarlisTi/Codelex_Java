@@ -9,18 +9,20 @@ public class ASCIIFigure {
         System.out.println("Input size of figure");
         int classConstant = scan.nextInt();
         int value = classConstant * 4;
+        int symbolValue = 4;
+        int newSymbolValue = 8;
 
         for (char i = 1; i <= classConstant; ++i) {
             char h;
-            for (h = 1; h <= value - 4 * i; ++h) {
+            for (h = 1; h <= value - symbolValue * i; ++h) {
                 System.out.print('/');
             }
 
-            for (h = 1; h <= 8 * i - 8; ++h) {
+            for (h = 1; h <=newSymbolValue * i - newSymbolValue; ++h) {
                 System.out.print('*');
             }
 
-            for (h = 1; h <= value - 4 * i; ++h) {
+            for (h = 1; h <= value - symbolValu * i; ++h) {
                 System.out.print('\\');
             }
 
