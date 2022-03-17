@@ -52,6 +52,15 @@ public class Video {
         this.rating = raiting;
 
     }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "title='" + title + '\'' +
+                ", checkOut=" + checkOut +
+                ", rating=" + rating +
+                '}';
+    }
 }
 
 
