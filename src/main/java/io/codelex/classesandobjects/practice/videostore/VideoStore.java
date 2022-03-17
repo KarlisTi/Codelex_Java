@@ -4,26 +4,56 @@ import java.util.ArrayList;
 
 public class VideoStore {
 
-    ArrayList<String> inventory = new ArrayList<String>();
+    ArrayList<Video> inventory = new ArrayList<>();
 
-    public void addVideo(String name) {
-        inventory.add(name);
+    public ArrayList<Video> getInventory() {
+        return inventory;
     }
 
-    public void doCheckout(String name) {
-        inventory.remove(name);
+
+    public void addVideo(Video movie) {
+        inventory.add(movie);
     }
+
+    public void returnVideo(Video movie) {
+        inventory.add(movie);
+
+    }
+
+    public void checkout(String name) {
+        for (Video movie : inventory) {
+            if (movie.getTitle().equals(name)) {
+                movie.doCheckedOut();
+                break;
+            }
+        }
+    }
+
 
     public void receiveRaiting(String name, int raiting) {
-        if (inventory.contains(name)) {
-
+        for (Video movie : inventory) {
+            if (movie.getTitle().equals(name)) {
+                movie.receiveRating(raiting);
+            }
         }
-
     }
 
+    public void printOutInventory() {
+        for (Video movie : inventory) {
+            System.out.println(movie);
+            {
+
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "VideoStore{" +
+                "inventory=" + inventory +
+                '}';
+    }
 }
-
-
 
 
 

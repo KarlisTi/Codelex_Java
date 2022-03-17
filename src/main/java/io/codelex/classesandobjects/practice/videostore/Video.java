@@ -1,16 +1,21 @@
 package io.codelex.classesandobjects.practice.videostore;
 
-public class Video extends VideoStore {
+public class Video {
 
     private String title;
 
     private boolean checkOut = false;
-    private int averageRating = 0;
+    private int rating = 0;
 
     public Video(String title, boolean checkOut, int averageRating) {
         this.title = title;
         this.checkOut = checkOut;
-        this.averageRating = averageRating;
+        this.rating = averageRating;
+    }
+
+    public Video(String title, boolean checkOut) {
+        this.title = title;
+        this.checkOut = checkOut;
     }
 
     public void setTitle(String title) {
@@ -21,36 +26,33 @@ public class Video extends VideoStore {
         return title;
     }
 
-    public boolean isCheckOut() {
-        return checkOut;
-    }
-
     public void setCheckOut(boolean checkOut) {
         this.checkOut = checkOut;
     }
 
     public int getRating() {
-        return averageRating;
+        return rating;
     }
 
     public void setRating(int rating) {
-        this.averageRating = rating;
+        this.rating = rating;
     }
 
 
     public void doCheckedOut() {
-        if (checkOut) {
+        if (!checkOut) {
+            checkOut = true;
             System.out.println("Video " + getTitle() + " has checked out");
+        } else {
+            System.out.println("Movie already taken");
         }
     }
 
     public void receiveRating(int raiting) {
-        int coutAppraiser = 0;
-        if (raiting > 0) {
-            coutAppraiser++;
-            averageRating += raiting / coutAppraiser;
-        }
+        this.rating = raiting;
+
     }
-
-
 }
+
+
+
