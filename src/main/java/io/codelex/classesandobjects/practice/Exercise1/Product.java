@@ -12,7 +12,7 @@ public class Product {
         this.amountAtStart = amountAtStart;
     }
 
-    public static void printProduct(String a, double b, int c) {
+    public static void printProduct(String name, double priceAtStart, int amountAtStart) {
         System.out.println(a + ", " + b + " EUR," + c + " units");
     }
 }
