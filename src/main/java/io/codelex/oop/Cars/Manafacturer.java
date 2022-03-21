@@ -13,6 +13,9 @@ public class Manafacturer {
         this.country = country;
     }
 
+    public int getYearEstablishment() {
+        return yearEstablishment;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -22,8 +25,18 @@ public class Manafacturer {
         return yearEstablishment == that.yearEstablishment && name.equals(that.name) && country.equals(that.country);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(name, yearEstablishment, country);
+    }
+
+    @Override
+    public String toString() {
+        return "Manafacturer{" +
+                "name='" + name + '\'' +
+                ", yearEstablishment=" + yearEstablishment +
+                ", country='" + country + '\'' +
+                '}';
     }
 }
