@@ -30,7 +30,14 @@ public class BankAccount {
         balance -= amount;
     }
 
-    public String toString(String name, double balance) {
-        return name + ", " + String.valueOf(balance);
+     public String toString(String name, double balance) {
+        BigDecimal roundedBalance = new BigDecimal(balance);
+        BigDecimal newValue = roundedBalance.setScale(2, RoundingMode.HALF_UP);
+        BigDecimal negativeValue = new BigDecimal(-1);
+        if (balance < 0) {
+            return name + ", " + "-" + "$" + newValue.multiply(negativeValue);
+        } else {
+            return name + ", " + "$" + newValue.multiply(negativeValue);
+        }
     }
 }
