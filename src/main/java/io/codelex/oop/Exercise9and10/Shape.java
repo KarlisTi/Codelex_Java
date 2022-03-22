@@ -1,4 +1,4 @@
-package io.codelex.oop.Exercise9;
+package io.codelex.oop.Exercise9and10;
 
 public abstract class Shape {
 
@@ -6,5 +6,5 @@ public abstract class Shape {
 
     abstract void calculateArea();
 
-    abstract void calculateVolume();
+
 }

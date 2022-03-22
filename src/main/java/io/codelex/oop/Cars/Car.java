@@ -9,7 +9,7 @@ public class Car {
     int price;
     int yearOfManafacture;
 
-    ArrayList<Manafacturer> manufacturer;
+    ArrayList<Manafacturer> manufacturer = new ArrayList<>();
 
     EngineType engine;
 
