@@ -2,7 +2,6 @@ package io.codelex.classesandobjects.practice.Exercise7;
 
 public class Dog {
 
-
     private String name;
     private String sex;
     private String mother;
@@ -31,7 +30,6 @@ public class Dog {
     public void setFather(String father) {
         this.father = father;
     }
-
 
     public void fathersName() {
         if (this.father == null) {
