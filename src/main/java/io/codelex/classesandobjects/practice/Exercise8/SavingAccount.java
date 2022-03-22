@@ -8,8 +8,8 @@ public class SavingAccount {
     private double annualInterestRate;
     private double balance;
     private double startingBalance;
-    private double getTotalDeposited = 0;
-    private double getTotalWithdarwn = 0;
+    private double getTotalDeposited;
+    private double getTotalWithdarwn;
 
     // konsturkors
 
