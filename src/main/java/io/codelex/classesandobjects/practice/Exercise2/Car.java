@@ -40,11 +40,13 @@ public class Car {
     public static double calculateConsumption(double start,double end, double liters) {
            return (end - start)* liters;
         }
-        public static boolean gasHog(double a){
-            return a > 15.0;
+        public static boolean gasHog(double valueA){
+            double literPerKillometers = 15.0
+            return valueA > litterPerKillometers;
         }
-        public static boolean economyCar(double b){
-            return b < 5.0;
+        public static boolean economyCar(double valueB){
+             double literPerKillometers = 5.0
+            return valueB < literPerKillometers;
         }
 
     }
