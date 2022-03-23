@@ -8,7 +8,6 @@ public class Date {
     private static int day;
     private int year;
 
-    
     public Date(int month, int day, int year) {
         this.month = month;
         this.day = day;
@@ -38,7 +37,6 @@ public class Date {
     public void setYear(int year) {
         this.year = year;
     }
-
 
     public void displayDate() {
         System.out.println(this.month + "/" + this.day + "/" + this.year);
