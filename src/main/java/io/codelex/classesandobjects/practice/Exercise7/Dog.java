@@ -3,13 +3,13 @@ package io.codelex.classesandobjects.practice.Exercise7;
 public class Dog {
 
     private String name;
-    private String sex;
+    private Sex gender;
     private String mother;
     private String father;
 
-    public Dog(String name, String sex, String mother, String father) {
+    public Dog(String name, Sex gender, String mother, String father) {
         this.name = name;
-        this.sex = sex;
+        this.gender = gender;
         this.mother = mother;
         this.father = father;
     }
