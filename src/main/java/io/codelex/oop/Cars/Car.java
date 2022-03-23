@@ -1,6 +1,7 @@
 package io.codelex.oop.Cars;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Car {
@@ -8,18 +9,24 @@ public class Car {
     String model;
     int price;
     int yearOfManafacture;
-
-    ArrayList<Manafacturer> manufacturer = new ArrayList<>();
-
     EngineType engine;
 
-    public Car(String name, String model, int price, int yearOfManafacture, EngineType engine) {
+    List<Manafacturer> manufacturer = new ArrayList<>();
+
+
+    public Car(ArrayList<Manafacturer> manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public Car(String name, String model, int price, int yearOfManafacture, EngineType engine, List<Manafacturer> manufacturer) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.yearOfManafacture = yearOfManafacture;
         this.engine = engine;
+        this.manufacturer = manufacturer;
     }
+
 
     public String getName() {
         return name;
@@ -41,7 +48,7 @@ public class Car {
         return price;
     }
 
-    public ArrayList<Manafacturer> getManufacturer() {
+    public List<Manafacturer> getManufacturer() {
         return manufacturer;
     }
 

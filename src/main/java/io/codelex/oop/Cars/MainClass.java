@@ -8,19 +8,30 @@ import java.util.Scanner;
 public class MainClass {
     public static void main(String[] args) {
         CarService newService = new CarService();
-
+        List<Manafacturer> firstList = new ArrayList<>();
+        List<Manafacturer> secondList = new ArrayList<>();
+        List<Manafacturer> thirdList = new ArrayList<>();
+        List<Manafacturer> fourthList = new ArrayList<>();
         Manafacturer first = new Manafacturer("General motors", 1908, "USA");
         Manafacturer second = new Manafacturer("The Volkswagen group", 1909, "Germany");
         Manafacturer third = new Manafacturer("Chrysler Corporation", 1928, "USA");
         Manafacturer fourth = new Manafacturer("Bavarian Motor Works", 1916, "Germany");
+        firstList.add(first);
+        firstList.add(second);
+        firstList.add(third);
+        secondList.add(second);
+        thirdList.add(third);
+        fourthList.add(fourth);
 
 
-        Car firstCar = new Car("Ford", "Mondeo", 10000, 2012, EngineType.S6);
-        Car secondCar = new Car("Jeep", "Cherokee", 12000, 2020, EngineType.V8);
-        Car thirdCar = new Car("Volkswagen", "Golf", 5000, 1995, EngineType.S4);
-        Car fourthCar = new Car("Dodge", "Viper", 30000, 2000, EngineType.V12);
-        Car fifhtCar = new Car("BMW", "530", 5200, 2006, EngineType.V6);
-        Car sixtCar = new Car("Audi", "100", 2300, 1989, EngineType.V8);
+        Car firstCar = new Car("Ford", "Mondeo", 10000, 2012, EngineType.S6, firstList);
+        Car secondCar = new Car("Jeep", "Cherokee", 12000, 2020, EngineType.V8, secondList);
+        Car thirdCar = new Car("Volkswagen", "Golf", 5000, 1995, EngineType.S4, secondList);
+        Car fourthCar = new Car("Dodge", "Viper", 30000, 2000, EngineType.V12, thirdList);
+        Car fifhtCar = new Car("BMW", "530", 5200, 2006, EngineType.V6, fourthList);
+        Car sixtCar = new Car("Audi", "100", 2300, 1989, EngineType.V8, fourthList);
+        Car seventhCar = new Car("Skoda", "Superb", 25000, 2021, EngineType.S6, secondList);
+
 
         fillCarList(newService, firstCar);
         fillCarList(newService, secondCar);
@@ -28,15 +39,20 @@ public class MainClass {
         fillCarList(newService, fourthCar);
         fillCarList(newService, fifhtCar);
         fillCarList(newService, sixtCar);
+        fillCarList(newService, seventhCar);
+
         removeCarFromList(newService, sixtCar);
         returnCarList(newService);
         filterByEngine(newService);
         oldCars(newService);
         expensiveCars(newService);
         cheaperCars(newService);
-        //threeManafacuters(newService);
+        threeManafacuters(newService);
         sortCars(newService);
         searchCar(newService);
+        searchByManufacturer(newService);
+
+
     }
 
     static void fillCarList(CarService newService, Car name) {
@@ -67,9 +83,9 @@ public class MainClass {
         newService.returnCheapestCars(10000);
     }
 
-//    static void threeManafacuters(CarService newService) {
-//        newService.returnCarsWithThreemanafaturer(3);
-//    }
+    static void threeManafacuters(CarService newService) {
+        newService.returnCarsWithThreemanafaturer();
+    }
 
     static void sortCars(CarService newService) {
         newService.sortCars("ascending");
@@ -77,6 +93,10 @@ public class MainClass {
 
     static void searchCar(CarService newService) {
         newService.searchForCar("BMW");
+    }
+
+    static void searchByManufacturer(CarService newService) {
+        newService.searchByManafacuter("General motors");
     }
 
 }

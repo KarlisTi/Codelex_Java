@@ -2,10 +2,11 @@ package io.codelex.oop.Cars;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class CarService {
 
-    ArrayList<Car> cars = new ArrayList<>();
+    List<Car> cars = new ArrayList<>();
 
 
     public void addCarToList(Car carName) {
@@ -35,10 +36,8 @@ public class CarService {
         for (Car yearOf : cars) {
             if (yearOf.getYearOfManafacture() <= yearOfManufacture) {
                 System.out.println(yearOf.getName() + " is the same year or its older than " + yearOfManufacture);
-
             }
         }
-
 
     }
 
@@ -60,13 +59,13 @@ public class CarService {
         }
     }
 
-    public void returnCarsWithThreemanafaturer(int size) {
-        for (Car threeCars : cars) {
-            if (threeCars.getManufacturer().size() == size) {
-                System.out.println(threeCars.getName());
-            }
+    public void returnCarsWithThreemanafaturer() {
+        for (Car size : cars) {
+            if (size.getManufacturer().size() > 3) ;
+            System.out.println(size.getName());
         }
     }
+
 
     public void sortCars(String nameOfAction) {
         ArrayList<String> newList = new ArrayList<>();
@@ -84,24 +83,23 @@ public class CarService {
 
     public void searchForCar(String name) {
         for (Car carName : cars) {
-            if (carName.getName().equals(name)) {
+            if (carName.getName().contains(name)) {
                 System.out.println(carName.getName() + " is on the list");
-                break;
             } else {
-                System.out.println("Can't find the car");
-                break;
+                System.out.println("Can't find a car");
             }
         }
 
     }
 
-    public void searchByManafacuter(Manafacturer name) {
-        for (Car manufacturer : cars) {
-            if (manufacturer.getName().equals(name)) {
-                System.out.println("The car " + manufacturer.getName() + " is on the list");
-            } else {
-                System.out.println("Can't find the car that you are looking for");
-            }
+    public void searchByManafacuter(String name) {
+        for (Car carList : cars) {
+            for (Manafacturer value : carList.manufacturer)
+                if (carList.getManufacturer().equals(name)) {
+                    System.out.println("The car " + carList.getName() + " is on the list");
+                } else {
+                    System.out.println("Can't find the car that you are looking for");
+                }
         }
 
     }
