@@ -16,7 +16,8 @@ public class Odometer {
     }
 
     public void incraseMilage() {
-        if (this.mileage < 999999) {
+        int maximumMilage = 999999
+        if (this.mileage < maximumMilage) {
             this.mileage += 1;
         } else {
             this.mileage = 0;
