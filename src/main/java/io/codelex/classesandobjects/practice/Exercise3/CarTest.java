@@ -5,7 +5,8 @@ public class CarTest {
         FuelGauge fuel = new FuelGauge(0);
 
         int f = 0;
-        while (fuel.getFuelInLiters() < 70) {
+        int maximumLitters=70;
+        while (fuel.getFuelInLiters() < maximumLitters) {
             fuel.fillFuel();
             f++;
         }
