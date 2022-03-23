@@ -39,8 +39,10 @@ public class Dog {
         }
     }
 
-    public void hasSameMotherAs(Dog otherDog) {
-        if (this.mother.equals(otherDog.mother)) {
+     public void hasSameMotherAs(Dog otherDog) {
+        if (this.mother == null) {
+            System.out.println("Unknown");
+        } else if (this.mother.equals(otherDog.mother)) {
             System.out.println(true);
         } else {
             System.out.println(false);
