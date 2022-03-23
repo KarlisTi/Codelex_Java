@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public abstract class Shape {
 
-    int numberOfSides;
+    private int numberOfSides;
 
     public Shape(int numberOfSides) {
         this.numberOfSides = numberOfSides;

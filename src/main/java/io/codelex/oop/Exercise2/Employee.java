@@ -5,8 +5,8 @@ import java.time.temporal.ChronoUnit;
 
 public class Employee extends Person {
 
-    String position;
-    String startedWorking;
+    private String position;
+    private String startedWorking;
 
 
     public Employee(String firstName, String lastName, String position, String startedWorking) {
@@ -27,7 +27,7 @@ public class Employee extends Person {
 
     @Override
     String getInfo() {
-        return firstName + " " + lastName + " " + position + " with " + getWorkExpierence() + " year experience";
+        return getFirstName() + " " + getLastName() + " " + this.position + " with " + getWorkExpierence() + " year experience";
 
     }
 }

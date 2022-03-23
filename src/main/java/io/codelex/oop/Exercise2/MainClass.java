@@ -1,7 +1,5 @@
 package io.codelex.oop.Exercise2;
 
-import java.time.LocalDate;
-import java.util.Scanner;
 
 public class MainClass {
     public static void main(String[] args) {

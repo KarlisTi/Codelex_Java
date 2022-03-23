@@ -1,10 +1,10 @@
 package io.codelex.oop.Exercise2;
 
 abstract class Person {
-    String firstName;
-    String lastName;
-    String id;
-    int age;
+    private String firstName;
+    private String lastName;
+    private String id;
+    private int age;
 
     public Person(String firstName, String lastName, String id, int age) {
         this.firstName = firstName;
@@ -18,6 +18,17 @@ abstract class Person {
         this.lastName = lastName;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getId() {
+        return id;
+    }
 
     public int getAge() {
         return age;

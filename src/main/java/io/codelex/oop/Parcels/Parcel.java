@@ -3,10 +3,10 @@ package io.codelex.oop.Parcels;
 public class Parcel implements Validable {
 
 
-    int xLength;
-    int yLength;
-    int zLength;
-    float weight;
+    private int xLength;
+    private int yLength;
+    private int zLength;
+    private float weight;
     static boolean isExpress = true;
 
     public Parcel(int xLength, int yLength, int zLength, float weight) {

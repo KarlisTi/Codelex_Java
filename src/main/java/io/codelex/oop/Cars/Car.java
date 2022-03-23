@@ -5,14 +5,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class Car {
-    String name;
-    String model;
-    int price;
-    int yearOfManafacture;
-    EngineType engine;
+    private String name;
+    private String model;
+    private int price;
+    private int yearOfManafacture;
+    private EngineType engine;
 
-    List<Manafacturer> manufacturer = new ArrayList<>();
-
+    private List<Manafacturer> manufacturer;
 
     public Car(ArrayList<Manafacturer> manufacturer) {
         this.manufacturer = manufacturer;

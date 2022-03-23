@@ -41,16 +41,23 @@ public class MainClass {
         fillCarList(newService, sixtCar);
         fillCarList(newService, seventhCar);
 
-        removeCarFromList(newService, sixtCar);
+//        removeCarFromList(newService, seventhCar);
+//        System.out.println();
         returnCarList(newService);
-        filterByEngine(newService);
-        oldCars(newService);
-        expensiveCars(newService);
-        cheaperCars(newService);
-        threeManafacuters(newService);
-        sortCars(newService);
-        searchCar(newService);
-        searchByManufacturer(newService);
+//        System.out.println();
+//        filterByEngine(newService);
+//        System.out.println();
+//        oldCars(newService);
+//       System.out.println();
+//        expensiveCars(newService);
+//        System.out.println();
+//        cheaperCars(newService);
+//        System.out.println();
+//        threeManafacuters(newService);
+//        sortCars(newService);
+//        searchCar(newService);
+//        searchByManufacturer(newService);
+        yearEstablishment(newService);
 
 
     }
@@ -72,7 +79,7 @@ public class MainClass {
     }
 
     static void oldCars(CarService newService) {
-        newService.returnOldCars(2000);
+        newService.returnOldCars(1999);
     }
 
     static void expensiveCars(CarService newService) {
@@ -84,11 +91,11 @@ public class MainClass {
     }
 
     static void threeManafacuters(CarService newService) {
-        newService.returnCarsWithThreemanafaturer();
+        newService.returnCarsWithThreeManufaturer();
     }
 
     static void sortCars(CarService newService) {
-        newService.sortCars("ascending");
+        newService.sortCars("descending");
     }
 
     static void searchCar(CarService newService) {
@@ -96,7 +103,11 @@ public class MainClass {
     }
 
     static void searchByManufacturer(CarService newService) {
-        newService.searchByManafacuter("General motors");
+        newService.searchByManafacuter("Bavarian Motor Works");
+    }
+
+    static void yearEstablishment(CarService newService) {
+        newService.establishmentYear(">= 1928");
     }
 
 }

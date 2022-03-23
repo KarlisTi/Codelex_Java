@@ -3,6 +3,7 @@ package io.codelex.oop.Cars;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class CarService {
 
@@ -59,13 +60,14 @@ public class CarService {
         }
     }
 
-    public void returnCarsWithThreemanafaturer() {
-        for (Car size : cars) {
-            if (size.getManufacturer().size() > 3) ;
-            System.out.println(size.getName());
+    public void returnCarsWithThreeManufaturer() {
+        for (Car eachCar : cars) {
+            if (eachCar.getManufacturer().size() >= 3) {
+                System.out.println(eachCar.getName());
+            }
+            ;
         }
     }
-
 
     public void sortCars(String nameOfAction) {
         ArrayList<String> newList = new ArrayList<>();
@@ -75,55 +77,78 @@ public class CarService {
         if (nameOfAction.equals("ascending")) {
             Collections.sort(newList);
         } else if (nameOfAction.equals("descending")) {
-            Collections.reverse(newList);
+            Collections.sort(newList, Collections.reverseOrder());
         }
         System.out.println(newList);
     }
 
 
     public void searchForCar(String name) {
-        for (Car carName : cars) {
-            if (carName.getName().contains(name)) {
-                System.out.println(carName.getName() + " is on the list");
-            } else {
-                System.out.println("Can't find a car");
-            }
+        ArrayList<String> carName = new ArrayList<>();
+        for (Car byName : cars) {
+            carName.add(byName.getName());
         }
-
+        if (carName.contains(name)) {
+            System.out.println(name + " is on the list");
+        } else {
+            System.out.println("Can't find a car");
+        }
     }
+
 
     public void searchByManafacuter(String name) {
         for (Car carList : cars) {
-            for (Manafacturer value : carList.manufacturer)
-                if (carList.getManufacturer().equals(name)) {
-                    System.out.println("The car " + carList.getName() + " is on the list");
+            for (Manafacturer list : carList.getManufacturer()) {
+                if (list.getCompanyName().equals(name)) {
+                    System.out.println(carList.getName());
                 } else {
                     System.out.println("Can't find the car that you are looking for");
                 }
-        }
-
-    }
-
-    public void establishmentYear(String year, Manafacturer manufacturer) {
-        String[] newString = year.split(" ");
-        int newNum = Integer.parseInt(newString[1]);
-        if (newString[0].contains(">")) {
-            for (Car eachCar : cars) {
-                if (manufacturer.getYearEstablishment() > newNum || manufacturer.getYearEstablishment() < newNum ||
-                        manufacturer.getYearEstablishment() >= newNum || manufacturer.getYearEstablishment() <= newNum ||
-                        manufacturer.getYearEstablishment() != newNum) {
-                    System.out.println(eachCar.getName());
-
-                }
-
             }
         }
     }
 
+
     @Override
-    public String toString() {
-        return "CarService{" +
-                "cars=" + cars +
-                '}';
+    public int hashCode() {
+        return Objects.hash(cars);
+    }
+
+    public void establishmentYear(String year) {
+        String[] newString = year.split(" ");
+        int newNum = Integer.parseInt(newString[1]);
+        for (Car list : cars) {
+            for (Manafacturer corpList : list.getManufacturer()) {
+                if (newString[0].contains(">=")) {
+                    if (corpList.getYearEstablishment() >= newNum) {
+                        System.out.println(list.getName());
+                    }
+                } else if (newString[0].contains(">")) {
+                    if (corpList.getYearEstablishment() > newNum) {
+                        System.out.println(list.getName());
+                    }
+                } else if (newString[0].contains("<")) {
+                    if (corpList.getYearEstablishment() < newNum) {
+                        System.out.println(list.getName());
+                    }
+                } else if (newString[0].contains("<=")) {
+                    if (corpList.getYearEstablishment() <= newNum) {
+                        System.out.println(list.getName());
+                    }
+                } else if (newString[0].contains("=")) {
+                    if (corpList.getYearEstablishment() == newNum) {
+                        System.out.println(list.getName());
+                    }
+                } else if (newString[0].contains("!=")) {
+                    if (corpList.getYearEstablishment() != newNum) {
+                        System.out.println(list.getName());
+                    }
+
+                }
+            }
+
+        }
     }
 }
+
+
