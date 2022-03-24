@@ -14,7 +14,7 @@ public class Exercise2 {
         try {
             methodB();
         } catch (ArithmeticException e) {
-            System.out.println("methodB called");
+            e.printStackTrace();
         }
     }
 
@@ -22,17 +22,18 @@ public class Exercise2 {
         try {
             methodC();
         } catch (ArithmeticException e) {
-            System.out.println("methodC called");
+            e.printStackTrace();
         }
     }
 
     public static void methodC() throws ArithmeticException {
         int numOne = 6;
-        int numTwo = 6;
+        int numTwo = 0;
         int result;
         try {
             result = numOne / numTwo;
         } catch (ArithmeticException e) {
+            e.printStackTrace();
             System.out.println("You can't divide by zero");
         }
     }
