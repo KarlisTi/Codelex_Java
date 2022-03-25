@@ -6,8 +6,10 @@ public enum CardinalPoints {
     EAST("right", 2),
     WEST("left", 3);
 
-    public final String directions;
-    public final int number;
+   private final String directions;
+    private final int number;
+    
+    
 
     CardinalPoints(String directions, int number) {
         this.directions = directions;
