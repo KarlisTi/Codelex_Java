@@ -1,4 +1,4 @@
-package io.codelex.typesandvariables.practice;
+package io.codelex.training.typesandvariables.practice;
 
 import java.util.Scanner;
 
@@ -8,9 +8,9 @@ public class exercise8 {
         System.out.println(minutesIntoYear);
         Scanner scan = new Scanner(System.in);
         int inputMinutes = scan.nextInt();
-        int years = inputMinutes/minutesIntoYear;
+        int years = inputMinutes / minutesIntoYear;
         int days = (inputMinutes / 60 / 24);
-        System.out.println("years:"+ years);
-        System.out.println("days"+ days);
+        System.out.println("years:" + years);
+        System.out.println("days" + days);
     }
 }

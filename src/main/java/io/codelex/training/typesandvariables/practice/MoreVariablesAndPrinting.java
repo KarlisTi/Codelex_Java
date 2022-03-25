@@ -1,4 +1,4 @@
-package io.codelex.typesandvariables.practice;
+package io.codelex.training.typesandvariables.practice;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
