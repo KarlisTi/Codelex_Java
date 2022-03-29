@@ -9,11 +9,18 @@ public enum CardinalPoints {
    private final String directions;
     private final int number;
     
-    
-
+   
     CardinalPoints(String directions, int number) {
         this.directions = directions;
         this.number = number;
+    }
+    
+      public String getDirections() {
+        return directions;
+    }
+
+    public int getNumber() {
+        return number;
     }
 
 
