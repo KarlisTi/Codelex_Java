@@ -1,19 +1,13 @@
 package io.codelex.collections.practice;
 
-
-import io.codelex.training.streamAPI.Song;
-
-import java.awt.*;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.*;
 import java.util.List;
-import java.util.Scanner;
 
 
 public class FlightPlanner {
@@ -36,7 +30,7 @@ public class FlightPlanner {
                 System.out.println(city);
             }
         }
-        System.out.println(chooseCity(scan, lines));
+        chooseCity(scan, lines);
 
     }
 
@@ -63,27 +57,63 @@ public class FlightPlanner {
 
 
     public static HashSet<String> listOfCities(List<String> lines) {
-        HashSet<String> newCities = new HashSet<>();
-        for (String line : lines) {
-            String[] res = line.split(" -> ");
-            newCities.add(res[0]);
+        HashSet<String> newCities = new HashSet();
+        for (String city : lines) {
+            if (!city.isEmpty()) {
+                String[] splitedCities = city.split(" ->");
+                newCities.add(String.valueOf(splitedCities[0]));
+            }
         }
         return newCities;
     }
 
-    public static ArrayList<String> chooseCity(Scanner scan, List<String> lines) {
+    public static void chooseCity(Scanner scan, List<String> lines) {
         ArrayList<String> newList = new ArrayList<>();
-        System.out.println("Enter name of the city where you whant to flight");
-        String inputCity = scan.next();
-        for (String city : lines) {
-            String[] newSet = city.split(" ->");
-            if (inputCity.equals(newSet[0])) {
-                newList.add(newSet[1]);
+        ArrayList<String> nextList = new ArrayList<>();
+        String inputCity;
+        while (true) {
+            System.out.println("Enter name of the city where you want to flight");
+            inputCity = scan.next();
+            for (String city : lines) {
+                String[] newSet = city.split(" ->");
+                if (inputCity.equals(newSet[0])) {
+                    newList.add(newSet[1]);
+                    break;
+                }
+            }
+
+            for (String newCity : newList) {
+                System.out.println("You can fly to: " + newCity);
+            }
+            while (true) {
+                System.out.println("Choose flight to continue trip");
+                String nextCity = scan.next();
+                for (String nextFlight : lines) {
+                    String[] nextSet = nextFlight.split(" ->");
+                    if (nextCity.equals(nextSet[0])) {
+                        nextList.add(nextSet[1]);
+                        for (String nexcity : nextList) {
+                            System.out.println("You can fly to: " + nexcity);
+                        }
+                        if (nextCity.equals(nextSet[0])) {
+                            nextList.add(nextSet[1]);
+                            for (String nexcity : nextList) {
+                                System.out.println("You can fly to: " + nexcity);
+                            }
+                        } else if (nextCity.equals(inputCity)) {
+                            System.out.println("You chosen round trip route");
+                            break;
+                        }
+                    }
+                }
             }
         }
-        return newList;
+
     }
 }
+
+
+
 
 
 
