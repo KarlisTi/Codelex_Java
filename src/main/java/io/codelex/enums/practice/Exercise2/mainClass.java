@@ -13,20 +13,23 @@ public class mainClass {
             System.out.println("Your turn (Enter s for scissor, p for paper, t for stone, q to quit)");
             char playerChoice = scan.nextLine().toUpperCase().charAt(0);
             ScissorPaperStone playerOneValue = playerOne(playerChoice);
-
-            if (playerChoice == 'Q') {
-                runningGame = false;
-                System.out.println("You quited game");
-            } else if (playerChoice != 'S' && playerChoice != 'T' && playerChoice != 'P') {
-                System.out.println("Invalid input!");
-            }
+            isValidInput(playerCoice)
+  
             System.out.print("My turn: ");
             ScissorPaperStone playerTwoValue = playerMyturn();
             System.out.println(playerTwoValue);
             Winner(playerOneValue, playerTwoValue);
         }
     }
+     public static void isValidInput(char playerChoice) {
+        if (playerChoice == 'Q') {
+            System.out.println("You quited game");
+        } else if (playerChoice != 'S' && playerChoice != 'T' && playerChoice != 'P') {
+            System.out.println("Invalid input");
+        }
 
+    }
+   
     public static ScissorPaperStone playerOne(char playerChoice) {
         ScissorPaperStone value = ScissorPaperStone.STONE;
         switch (playerChoice) {
