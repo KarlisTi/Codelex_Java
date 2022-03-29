@@ -1,7 +1,6 @@
-package io.codelex.training;//package io.codelex.training.main;
+//package io.codelex.training;//package io.codelex.training.main;
 //
 //import org.json.JSONObject;
-//
 //
 //import java.io.BufferedReader;
 //import java.io.IOException;

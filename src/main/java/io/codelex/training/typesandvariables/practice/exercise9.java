@@ -1,4 +1,4 @@
-package io.codelex.typesandvariables.practice;
+package io.codelex.training.typesandvariables.practice;
 
 import java.util.Scanner;
 
@@ -17,13 +17,13 @@ public class exercise9 {
         double secondsInHours = 3600;
         double totalTimeInSeconds = ((inputHour * secondsInHours) + (inputMinutes * 60) + inputSeconds);
         double metersInSeconds = inputDistance / totalTimeInSeconds;
-        double totalTimeInHours = inputHour +inputMinutes* (1/60.0) + inputSeconds * (1/secondsInHours);
-        double kmInH = (inputDistance/1000.0)/totalTimeInHours;
-        double milesInH = kmInH /1.609;
+        double totalTimeInHours = inputHour + inputMinutes * (1 / 60.0) + inputSeconds * (1 / secondsInHours);
+        double kmInH = (inputDistance / 1000.0) / totalTimeInHours;
+        double milesInH = kmInH / 1.609;
 
-        System.out.println("Your speed in meters/seconds is:"+ metersInSeconds);
-        System.out.println("Your speed in km/h is:"+ kmInH);
-        System.out.println("Your speed in miles/h :"+ milesInH);
+        System.out.println("Your speed in meters/seconds is:" + metersInSeconds);
+        System.out.println("Your speed in km/h is:" + kmInH);
+        System.out.println("Your speed in miles/h :" + milesInH);
 
     }
 }

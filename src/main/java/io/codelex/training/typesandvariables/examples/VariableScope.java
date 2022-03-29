@@ -1,4 +1,4 @@
-package io.codelex.typesandvariables.examples;
+package io.codelex.training.typesandvariables.examples;
 
 public class VariableScope {
     public static int x = 10; // class level
