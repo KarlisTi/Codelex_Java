@@ -4,8 +4,13 @@ public class Porche implements Car {
 
     private Integer currentSpeed = 0;
 
-    public Porche() {
+    public Porche(Integer currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
 
+    @Override
+    public Integer getCurrentSpeed() {
+        return currentSpeed;
     }
 
     @Override
@@ -26,5 +31,12 @@ public class Porche implements Car {
     @Override
     public void startEngine() {
         System.out.println("Rrrrrrr.....");
+    }
+
+    @Override
+    public String toString() {
+        return "Porche{" +
+                "currentSpeed=" + currentSpeed +
+                '}';
     }
 }

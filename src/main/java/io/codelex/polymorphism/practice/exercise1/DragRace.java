@@ -1,6 +1,11 @@
 package io.codelex.polymorphism.practice.exercise1;
 
+import com.sun.jdi.Method;
+import io.codelex.training.transports.Vechile;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Take a look at the cars in this package.
@@ -15,13 +20,15 @@ import java.util.ArrayList;
 public class DragRace {
 
     public static void main(String[] args) {
-        ArrayList<Car> newCarList = new ArrayList<>();
-        Audi newAudi = new Audi();
-        Bmw newBMW = new Bmw();
-        Porche newPorche = new Porche();
-        Subaru newSubaru = new Subaru();
-        Lexus newLexus = new Lexus();
-        Tesla newTesla = new Tesla();
+        List<Car> newCarList = new ArrayList<>();
+        Audi newAudi = new Audi(0);
+        Bmw newBMW = new Bmw(0);
+        Porche newPorche = new Porche(0);
+        Subaru newSubaru = new Subaru(0);
+        Lexus newLexus = new Lexus(0);
+        Tesla newTesla = new Tesla(0);
+        int fastestCar = 0;
+        String className = null;
 
         newCarList.add(newAudi);
         newCarList.add(newBMW);
@@ -30,8 +37,31 @@ public class DragRace {
         newCarList.add(newLexus);
         newCarList.add(newTesla);
 
-        System.out.println(newCarList);
-
+        int i = 0;
+        while (i < 10) {
+            for (Car newCar : newCarList) {
+                newCar.speedUp();
+                if (i == 3) {
+                    newLexus.useNitrousOxideEngine();
+                    newSubaru.useNitrousOxideEngine();
+                }
+                if (newCar.getCurrentSpeed() > fastestCar) {
+                    fastestCar = newCar.getCurrentSpeed();
+                    className = newCar.getClass().getSimpleName();
+                }
+            }
+            i++;
+        }
+        System.out.println(className);
+        System.out.println(fastestCar);
 
     }
+
+
 }
+
+
+
+
+
+

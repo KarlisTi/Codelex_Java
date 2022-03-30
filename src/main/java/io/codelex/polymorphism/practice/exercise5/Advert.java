@@ -3,6 +3,7 @@ package io.codelex.polymorphism.practice.exercise5;
 public class Advert {
     protected int fee;
 
+
     public Advert() {
         fee = 0;
     }

@@ -3,8 +3,13 @@ package io.codelex.polymorphism.practice.exercise1;
 public class Subaru implements Car, Boost {
     private Integer currentSpeed = 0;
 
-    public Subaru() {
+    public Subaru(Integer currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
 
+    @Override
+    public Integer getCurrentSpeed() {
+        return currentSpeed;
     }
 
     @Override
@@ -30,5 +35,12 @@ public class Subaru implements Car, Boost {
     @Override
     public void startEngine() {
         System.out.println("Rrrrrrr.....");
+    }
+
+    @Override
+    public String toString() {
+        return "Subaru{" +
+                "currentSpeed=" + currentSpeed +
+                '}';
     }
 }

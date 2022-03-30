@@ -5,9 +5,13 @@ import java.util.ArrayList;
 public class Audi implements Car {
     private Integer currentSpeed = 0;
 
+    public Audi(Integer currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
 
-    public Audi() {
-
+    @Override
+    public Integer getCurrentSpeed() {
+        return currentSpeed;
     }
 
     @Override
@@ -30,5 +34,10 @@ public class Audi implements Car {
         System.out.println("Rrrrrrr.....");
     }
 
-
+    @Override
+    public String toString() {
+        return "Audi{" +
+                "currentSpeed=" + currentSpeed +
+                '}';
+    }
 }

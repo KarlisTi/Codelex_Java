@@ -1,11 +1,19 @@
 package io.codelex.polymorphism.practice.exercise1;
 
+import io.codelex.training.transports.Vechile;
+
 public class Bmw implements Car {
     private Integer currentSpeed = 0;
 
-    public Bmw() {
-
+    public Bmw(Integer currentSpeed) {
+        this.currentSpeed = currentSpeed;
     }
+
+    @Override
+    public Integer getCurrentSpeed() {
+        return currentSpeed;
+    }
+
 
     @Override
     public void speedUp() {
@@ -27,4 +35,10 @@ public class Bmw implements Car {
         System.out.println("Rrrrrrr.....");
     }
 
+    @Override
+    public String toString() {
+        return "Bmw{" +
+                "currentSpeed=" + currentSpeed +
+                '}';
+    }
 }

@@ -20,8 +20,11 @@ public class Staff {
                 "555-8374");
         staffList[5] = new Volunteer("Cliff", "321 Duds Lane",
                 "555-7282");
+        staffList[6] = new Employee("Janis", "Ligo 10", "26445367", "443-46-8976", 6.25);
+        staffList[7] = new Employee("Janis", "Brivibas 23", "2565464564", "476-34-34545", 9.75);
         ((Executive) staffList[0]).awardBonus(500.00);
         ((Hourly) staffList[3]).addHours(40);
+
     }
 
     //-----------------------------------------------------------------
