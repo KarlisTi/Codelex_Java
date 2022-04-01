@@ -61,8 +61,9 @@ public class CarService {
     }
 
     public void returnCarsWithThreeManufaturer() {
+        int manufacturerSize = 3;
         for (Car eachCar : cars) {
-            if (eachCar.getManufacturer().size() >= 3) {
+            if (eachCar.getManufacturer().size() >= manufacturerSize) {
                 System.out.println(eachCar.getName());
             }
             ;
