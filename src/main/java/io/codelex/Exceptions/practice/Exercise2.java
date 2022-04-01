@@ -1,5 +1,4 @@
 package io.codelex.Exceptions.practice;
-
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Scanner;
 
@@ -15,6 +14,7 @@ public class Exercise2 {
             methodB();
         } catch (ArithmeticException e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
@@ -23,6 +23,7 @@ public class Exercise2 {
             methodC();
         } catch (ArithmeticException e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
