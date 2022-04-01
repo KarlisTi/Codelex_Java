@@ -56,7 +56,11 @@ public class Car {
         if (this == o) return true;
         if (!(o instanceof Car)) return false;
         Car car = (Car) o;
-        return price == car.price && yearOfManafacture == car.yearOfManafacture && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(manufacturer, car.manufacturer) && engine == car.engine;
+        return price == car.price && yearOfManafacture == car.yearOfManafacture
+            && Objects.equals(name, car.name)
+            && Objects.equals(model, car.model) 
+            && Objects.equals(manufacturer, car.manufacturer) 
+            && engine == car.engine;
     }
 
     @Override
