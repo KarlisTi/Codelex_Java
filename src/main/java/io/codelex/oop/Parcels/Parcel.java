@@ -2,7 +2,6 @@ package io.codelex.oop.Parcels;
 
 public class Parcel implements Validable {
 
-
     private int xLength;
     private int yLength;
     private int zLength;
@@ -14,26 +13,25 @@ public class Parcel implements Validable {
         this.yLength = yLength;
         this.zLength = zLength;
         this.weight = weight;
-
     }
-
 
     @Override
     public void validate() {
-        if (xLength + yLength + zLength > 300) {
+        int maxDimension = 300;
+        int minEachDimensionSize = 30;
+        if (xLength + yLength + zLength > maxDimension) {
             System.out.println("Dimension is not valid");
-        } else if (xLength < 30 && yLength < 30 && zLength < 30) {
+        } else if (xLength < minEachDimensionSize && yLength < minEachDimensionSize 
+                && zLength < minEachDimensionSize) {
             System.out.println("length is to low");
         } else {
             System.out.println("Dimension is legit");
         }
 
-        if (weight > 30) {
+        if (weight > minEachDimensionSize) {
             isExpress = false;
         } else {
             System.out.println("Weight is legit");
         }
-
-
     }
 }
