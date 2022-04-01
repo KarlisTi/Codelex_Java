@@ -3,9 +3,9 @@ package io.codelex.oop.Cars;
 import java.util.Objects;
 
 public class Manafacturer {
-    String CompanyName;
-    int yearEstablishment;
-    String country;
+   private String CompanyName;
+   private int yearEstablishment;
+   private String country;
 
     public Manafacturer(String name, int yearOfEstablishment, String country) {
         this.CompanyName = name;
@@ -14,11 +14,11 @@ public class Manafacturer {
     }
 
     public int getYearEstablishment() {
-        return yearEstablishment;
+        return this.yearEstablishment;
     }
 
     public String getCompanyName() {
-        return CompanyName;
+        return this.CompanyName;
     }
 
     @Override
