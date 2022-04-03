@@ -44,8 +44,7 @@ public class StreamsExercise {
 
     public static List<Integer> skip(List<Integer> integers, Integer toSkip) {
         return integers.stream()
-                .filter(i -> i % 2 == 0)
-                .skip(2)
+                .skip(toSkip)
                 .collect(Collectors.toList());
     }
 
