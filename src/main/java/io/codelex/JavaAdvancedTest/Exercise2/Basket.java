@@ -1,34 +1,33 @@
 package io.codelex.JavaAdvancedTest.Exercise2;
 
-public class Basket<T>{
+import java.util.ArrayList;
+import java.util.List;
 
-    T valueOne;
+public class Basket<T> {
 
+    private List<T> valueList;
+    private int sizeOfBasket = 10;
 
-    public Basket(T valueOne) {
-        this.valueOne = valueOne;
-
+    public Basket(List<T> value, int sizeOfBasket) {
+        this.valueList = value;
+        this.sizeOfBasket = sizeOfBasket;
     }
 
-    public static<T extends Number> T add(T x, T y){
 
-        if (x == null || y == null) {
-            return null;
-        }
-
-        if (x instanceof Double) {
-            return (T) new Double(x.doubleValue() + y.doubleValue());
-        } else if (x instanceof Integer) {
-            return (T)new Integer(x.intValue() + y.intValue());
+    public void addToBasket(T value) throws BasketFullException {
+        if (this.valueList.size() == sizeOfBasket) {
+            throw new BasketFullException("Basket is full");
         } else {
-            throw new IllegalArgumentException("Type " + x.getClass() + " is not supported by this method");
+            this.valueList.add(value);
         }
     }
-    }
-    public T removeFromBasket() {
-        valueOne.
 
-
+    public void removeFromBasket(T value) throws BasketEmptyException {
+        if (this.valueList.isEmpty()) {
+            throw new BasketEmptyException("Basket is empty");
+        } else {
+            this.valueList.remove(value);
+        }
 
     }
 
