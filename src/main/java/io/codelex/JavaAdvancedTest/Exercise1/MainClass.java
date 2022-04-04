@@ -1,80 +1,93 @@
 package io.codelex.JavaAdvancedTest.Exercise1;
 
+
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-import static org.apache.commons.lang3.RandomUtils.nextInt;
 
 public class MainClass {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NotEnoughtFundsException {
         Scanner scan = new Scanner(System.in);
 
-        CreditCard newCreditCard = new CreditCard(54321, "Janis Ozols", 023, new BigDecimal(200));
-        DebitCard newDebitCard = new DebitCard(56789, "Anna Zarina", 567, new BigDecimal(150));
-        BigDecimal add;
-        BigDecimal withdraw;
-        BigDecimal add1;
-        BigDecimal withdraw1;
+        CreditCard newCreditCard = new CreditCard(54321, "Janis Ozols", 023, new BigDecimal(0));
+        DebitCard newDebitCard = new DebitCard(56789, "Anna Zarina", 567, new BigDecimal(0));
+        boolean programRunning = true;
 
-
-
-        System.out.println("What card would you like to use Credit or Debit. (write Credit or Debit");
-        String choseCard = scan.nextLine().toUpperCase();
-
-        System.out.println("Do you want to add or withdraw money (write add or withdraw)");
-        String action = scan.nextLine();
-
-        if (action.equals("ADD") && choseCard.equals("CREDIT")) {
-            System.out.println("Enter amount that you want add to card");
-            add = scan.nextBigDecimal();
-
-        } else if (action.equals("WITHDRAW") && choseCard.equals("CREDIT")) {
-            try {
-                System.out.println("Enter amount that you want to withdraw");
-              withdraw = scan.nextBigDecimal();
-            } catch (Exception e) {
-                System.out.println("A problem occurred: " + e);
+        while (programRunning) {
+            System.out.println("Please insert a card");
+            System.out.println("Chose your type of card:for credit card press 1, or debit car press 2");
+            int chooseCard = scan.nextInt();
+            System.out.println("If you want to add money press 1 or withdraw press 2 or press 3 to quit program");
+            int addOrWithdraw = scan.nextInt();
+            if (addOrWithdraw == 3) {
+                System.out.println("Program is quiting");
+                programRunning = false;
             }
-            checkCreditCard(choseCard,action,newCreditCard,add,withdraw)
-        }
-
-        if (action.equals("ADD") && choseCard.equals("DEBIT")) {
-            System.out.println("Enter amount that you want add to card");
-            add1 = scan.nextBigDecimal();
-
-        } else if (action.equals("WITHDRAW") && choseCard.equals("DEBIT")) {
-            try {
-                System.out.println("Enter amount that you want to withdraw");
-                BigDecimal withdraw1 = scan.nextBigDecimal();
-            } catch (Exception e) {
-                System.out.println("A problem occurred: " + e);
-            }
-            checkDebitCard(choseCard,action,newCreditCard,add1,withdraw1)
-        }
-
-    }
-
-    public static void checkCreditCard(String choseCard, String action, CreditCard newCreditCard,
-                                BigDecimal add, BigDecimal withdraw) throws NotEnoughtFundsException {
-        if (choseCard.equals("CREDIT") && action.equals("ADD")) {
-            newCreditCard.addMoney(add);
-        } else if (choseCard.equals("CREDIT") && action.equals("WITHDRAW")) {
-            newCreditCard.addMoney(withdraw);
-            if (withdraw.compareTo(newCreditCard.getBlanace()) < -1) {
-                throw new NotEnoughtFundsException("\n" + "Inefficient founds ");
+            switch (chooseCard) {
+                case 1:
+                    System.out.println("You chose credit card");
+                    try {
+                        creditCard(addOrWithdraw, newCreditCard, scan);
+                    } catch (Exception e) {
+                        System.out.println("Error was occurred " + e);
+                    }
+                    break;
+                case 2:
+                    System.out.println("You chose debit card");
+                    try {
+                        debitCard(addOrWithdraw, newDebitCard, scan);
+                    } catch (Exception e) {
+                        System.out.println("Error was occurred " + e);
+                    }
+                    break;
+                default:
+                    System.out.println("Please choose your card type");
             }
         }
     }
 
-    public static void checkDebitCard(String choseCard, String action, DebitCard newDebitCard,
-                               BigDecimal add, BigDecimal withdraw) throws NotEnoughtFundsException {
-        if (choseCard.equals("DEBIT") && action.equals("ADD")) {
-            newDebitCard.addMoney(add);
-        } else if (choseCard.equals("DEBIT") && action.equals("WITHDRAW")) {
-            newDebitCard.addMoney(withdraw);
-            if (withdraw.compareTo(newDebitCard.getBlanace()) < -1) {
-                throw new NotEnoughtFundsException("\n" + "Inefficient founds ");
+    public static void creditCard(int addOrWithdraw, CreditCard newCreditCard, Scanner scan) throws NotEnoughtFundsException {
+        if (addOrWithdraw == 1) {
+            System.out.println("How much money do you want to add?");
+            double doubleInput = scan.nextDouble();
+            BigDecimal newInput = BigDecimal.valueOf(doubleInput);
+            newCreditCard.addMoney(newInput);
+            newCreditCard.getBalance();
+            System.out.println(newCreditCard.getBalance());
+        } else if (addOrWithdraw == 2) {
+            System.out.println("How much money do you want to withdraw?");
+            double doubleInput = scan.nextDouble();
+            BigDecimal withdraw = BigDecimal.valueOf(doubleInput);
+            ;
+            if (withdraw.compareTo(newCreditCard.getBalance()) > 0) {
+                throw new NotEnoughtFundsException("Insufficient fonds");
+            } else if (newCreditCard.getBalance().compareTo(BigDecimal.valueOf(100)) <= 0) {
+                System.out.println("Warning: low funds");
+                newCreditCard.withdrawMoney(withdraw);
             }
         }
     }
+
+
+    public static void debitCard(int addOrWithdraw, DebitCard newDebitCard, Scanner scan) throws NotEnoughtFundsException {
+        if (addOrWithdraw == 1) {
+            System.out.println("How much money do you want to add?");
+            double doubleInput = scan.nextDouble();
+            BigDecimal newInput = BigDecimal.valueOf(doubleInput);
+            if (newDebitCard.getBalance().compareTo(BigDecimal.valueOf(10_000)) > 0) {
+                System.out.println("Warning: Too much money");
+                newDebitCard.addMoney(newInput);
+            }
+        } else if (addOrWithdraw == 2) {
+            System.out.println("How much money do you want to withdraw?");
+            double doubleInput = scan.nextDouble();
+            BigDecimal withdraw = BigDecimal.valueOf(doubleInput);
+            newDebitCard.withdrawMoney(withdraw);
+            if (withdraw.compareTo(newDebitCard.getBalance()) > 0) {
+                throw new NotEnoughtFundsException("Insufficient fonds");
+            }
+        }
+    }
+
+
 }

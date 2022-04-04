@@ -16,44 +16,19 @@ public class Card {
         this.balance = balance;
     }
 
-    public int getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(int cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public int getCCVcode() {
-        return CCVcode;
-    }
-
-    public void setCCVcode(int CCVcode) {
-        this.CCVcode = CCVcode;
-    }
-
-    public BigDecimal getBlanace() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBlanace(BigDecimal blanace) {
+    public void setBalnace(BigDecimal blanace) {
         this.balance = blanace;
     }
 
     public void addMoney(BigDecimal money) {
-        this.balance.add(money);
+        this.balance = balance.add(money);
     }
 
-    public void widhdrawMoney(BigDecimal money) {
-        this.balance.subtract(money);
+    public void withdrawMoney(BigDecimal money) {
+        this.balance = balance.add(money);
     }
-
 }

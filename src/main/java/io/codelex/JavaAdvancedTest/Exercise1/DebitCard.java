@@ -2,9 +2,7 @@ package io.codelex.JavaAdvancedTest.Exercise1;
 
 import java.math.BigDecimal;
 
-public class DebitCard extends Card implements warning {
-
-    private BigDecimal toMuchMoney;
+public class DebitCard extends Card {
 
 
     public DebitCard(int cardNumber, String owner, int CCVcode, BigDecimal balance) {
@@ -12,17 +10,21 @@ public class DebitCard extends Card implements warning {
     }
 
     @Override
-    public BigDecimal getBlanace() {
-        return super.getBlanace();
+    public BigDecimal getBalance() {
+        return super.getBalance();
     }
 
     @Override
-    public void warning() {
-        if (getBlanace().compareTo(toMuchMoney) > 10000) {
-            warning mywarning = () -> {
-                System.out.println("in Debit card left less than 1000");
-            };
-        }
+    public void addMoney(BigDecimal money) {
+
+        super.addMoney(money);
+    }
+
+
+    @Override
+    public void withdrawMoney(BigDecimal money) {
+        super.withdrawMoney(money);
     }
 }
+
 
