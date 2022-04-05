@@ -8,9 +8,8 @@ public class Basket<T> {
     private List<T> valueList;
     private int sizeOfBasket = 10;
 
-    public Basket(List<T> value, int sizeOfBasket) {
-        this.valueList = value;
-        this.sizeOfBasket = sizeOfBasket;
+    public Basket() {
+        this.valueList = new ArrayList<>();
     }
 
 
