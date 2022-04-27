@@ -1,0 +1,23 @@
+package io.codelex.dateandtime.practice.PeriodOfDate;
+
+import java.time.LocalDate;
+
+public class MainClass {
+
+    public static void main(String[] args) {
+
+        LocalDate firstStart = LocalDate.of(2022, 1, 1);
+        LocalDate firstEnd = LocalDate.of(2022, 1, 14);
+        DatePeriod firstPeriod = new DatePeriod(firstStart, firstEnd);
+
+        LocalDate secondStart = LocalDate.of(2022, 1, 15);
+        LocalDate secondEnd = LocalDate.of(2022, 1, 16);
+        DatePeriod secondPeriod = new DatePeriod(secondStart, secondEnd);
+
+        DatePeriod overlap = firstPeriod.intersection(secondPeriod);
+
+        System.out.println(overlap);
+    }
+
+}
+
